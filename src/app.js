@@ -16,21 +16,6 @@ conexao.once("open", () => {
     console.log("Conexão com o banco feita com sucesso.");
 });
 
-app.delete("/livros/:id", (req, res) =>{ //DELETE
-    const index = buscaLivro(req.params.id);
-    livros.splice(index, 1);
-    res.status(200).send("Livro removido com sucesso.");
-})
-
-
-
-
-function buscaLivro(id){
-    return livros.findIndex(livro => {
-        return livro.id === Number(id);
-    })
-}
-
 // 
 
 export default app;
